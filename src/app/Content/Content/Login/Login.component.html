@@ -1,0 +1,35 @@
+<div id="firebaseui-auth-container" class="content" style="margin-top: 8vw;">
+  <mat-card class="card-login text-center" style="padding-bottom: 30px;">
+    <!-- <mat-card-header>
+      <mat-card-subtitle style="font-weight: 600;color:gray;">Sign In</mat-card-subtitle>
+    </mat-card-header>
+    <mat-divider></mat-divider> -->
+    <mat-card-content>
+      <mat-form-field *ngIf="mobileField" appearance="standard" class="col-11">
+        <mat-label>Mobile Number</mat-label>
+        <input [(ngModel)]="phonenumber" matInput type="text" (keypress)="checkDigit('mobile',$event)" required>
+        <mat-icon matSuffix>phone</mat-icon>
+        <mat-error>Mobile Number is required</mat-error>
+      </mat-form-field>
+      <br/>
+      <mat-form-field *ngIf="otpField" appearance="standard" class="col-11">
+        <mat-label>One Time Password (OTP)</mat-label>
+        <input [(ngModel)]="code" matInput type="text" (keypress)="checkDigit('otp',$event)" (blur)="checkDisMobile()" required>
+        <mat-icon matSuffix>visibility</mat-icon>
+        <mat-error>OTP Number is required</mat-error>
+      </mat-form-field>
+      <br/>
+      <a hidden href="#" class="fa fa-facebook"></a>
+      <a hidden href="#" class="fa fa-twitter"></a>
+      <a hidden href="#" class="fa fa-google"></a>
+      <div [hidden]="!mobileField" id="recaptcha-container"></div>
+    </mat-card-content>
+
+  </mat-card>
+  <mat-card-actions style="margin-top: -30px;">
+    <button *ngIf="mobileField" [disabled]="subDisabled" mat-raised-button id="sign-in-button" (click)="submitPhoneNumberAuth();" color="primary"
+      style="min-width: 150px;line-height: 40px;border-radius: 30px;">Submit</button>
+    <button *ngIf="otpField" mat-raised-button id="confirm-code" (click)="SubmitPhoneNumberAuthCode()" color="primary"
+      style="min-width: 150px;line-height: 40px;border-radius: 30px;">Submit CODE </button>
+  </mat-card-actions>
+</div>
