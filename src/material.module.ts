@@ -37,7 +37,7 @@ import {
   MatTooltipModule,
   MatTreeModule,
 } from '@angular/material';
-import {A11yModule} from '@angular/cdk/a11y';
+
 import {BidiModule} from '@angular/cdk/bidi';
 import {ObserversModule} from '@angular/cdk/observers';
 // import {OverlayModule} from '@angular/cdk/overlay';
@@ -51,7 +51,6 @@ import {CdkTableModule} from '@angular/cdk/table';
 @NgModule({
   exports: [
     // CDK
-    A11yModule,
     BidiModule,
     ObserversModule,
     // OverlayModule,

@@ -98,6 +98,9 @@ export class LoginComponent implements OnInit {
 
   checkDigit(type: any, event: any) {
     if (event.keyCode >= 48 && event.keyCode <= 57) {
+      if (type === 'mobile' && event.target.value.length === 9) {
+        this.subDisabled = false;
+      }
       if (type === 'mobile' && event.target.value.length > 9) {
         return false;
       }
