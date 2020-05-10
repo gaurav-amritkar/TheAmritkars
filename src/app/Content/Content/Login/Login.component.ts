@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private firestore: AngularFirestore,
-    private angularFireAuth: AngularFireAuth
+    private angularFireAuth: AngularFireAuth,
   ) {
   }
 
@@ -30,11 +30,12 @@ export class LoginComponent implements OnInit {
         signInSuccessWithAuthResult(authResult, redirectUrl) {
           console.log('Signin Success with Auth rslt', authResult);
 
-          let user = authResult.user;
-          let credential = authResult.credential;
-          let isNewUser = authResult.additionalUserInfo.isNewUser;
-          let providerId = authResult.additionalUserInfo.providerId;
-          let operationType = authResult.operationType;
+          const user = authResult.user;
+          const credential = authResult.credential;
+          const isNewUser = authResult.additionalUserInfo.isNewUser;
+          const providerId = authResult.additionalUserInfo.providerId;
+          const operationType = authResult.operationType;
+
           // Do something with the returned AuthResult.
           // Return type determines whether we continue the redirect automatically
           // or whether we leave that to developer to handle.
