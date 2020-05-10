@@ -36,10 +36,18 @@ export class LoginComponent implements OnInit {
           const providerId = authResult.additionalUserInfo.providerId;
           const operationType = authResult.operationType;
 
+          if (isNewUser) {
+            // console.log('New User');
+            window.location.assign('/register');
+          } else {
+            // console.log('Existing User');
+            window.location.assign('/home');
+          }
+
           // Do something with the returned AuthResult.
           // Return type determines whether we continue the redirect automatically
           // or whether we leave that to developer to handle.
-          return true;
+          return false;
         }
       },
       credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
@@ -49,7 +57,7 @@ export class LoginComponent implements OnInit {
       queryParameterForSignInSuccessUrl: 'signInSuccessUrl',
       // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
       signInFlow: 'popup',
-      signInSuccessUrl: 'home',
+      // signInSuccessUrl: '/home',
       signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         {
@@ -59,7 +67,8 @@ export class LoginComponent implements OnInit {
             type: 'image',
             size: 'normal',
             badge: 'bottomleft'
-          }
+          },
+          defaultCountry: 'IN'
         }
       ],
       // Set to true if you only have a single federated provider like
