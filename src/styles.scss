@@ -1,36 +1,44 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
 /* You can add global styles to this file, and also import other style files */
-body {
-  // overflow: hidden;
-  /* Hide scrollbars */
-}
 
-html {
-  height: 100%;
-}
 
 body {
-  min-height: 100%;
-  position: relative;
+  // min-height: 100%;
+  // position: relative;
   background-color: #E6E6FA !important;
-  padding-bottom: 50px;
+  // padding-top: 60px;
+  overflow: hidden;
+}
+
+.toolbar {
+  // height: 60px;
+  // margin: -8px;
+  display: flex;
+  align-items: center;
+  background-color: #1976d2;
+  color: white;
+  font-weight: 600;
+  padding:5px;
+}
+
+.spacer {
+  flex: 0.5;
 }
 
 .footer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: fixed;
-  bottom: 0;
-  height: 50px;
+  // position: fixed;
+  // bottom: 0px;
+  // height: 50px;
 }
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
-  margin: 0;
 }
 
 /* Firefox */
@@ -151,7 +159,7 @@ p {
 
 .content {
   display: flex;
-  margin: 32px auto;
+  // margin: 32px auto;
   padding: 0 16px;
   max-width: 960px;
   flex-direction: column;
@@ -237,7 +245,7 @@ svg#rocket {
 }
 
 svg#rocket-smoke {
-  height: 100vh;
+  height: 88vh;
   position: absolute;
   top: 10px;
   right: 180px;
@@ -263,6 +271,11 @@ svg#clouds {
   width: 1920px;
 }
 
+.headerStyle {
+  font-size: x-large;
+  font-family: Courier New;
+  padding-top: 12px;
+}
 
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
@@ -292,9 +305,38 @@ svg#clouds {
     display: none;
     visibility: hidden;
   }
-}
 
+  .headerStyle {
+    font-size: large;
+    font-family: Courier New;
+    padding-top: 12px;
+  }
+
+}
 
 .mat-tree{
   background: none;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 8px transparent;
+  border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: darkgrey;
 }

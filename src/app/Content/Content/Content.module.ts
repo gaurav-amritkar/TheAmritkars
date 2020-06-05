@@ -18,6 +18,10 @@ import { ContentRoutingModule } from './Content-routing.module';
     ContentComponent,
     LoginComponent,
     RegisterComponent
+  ],
+  entryComponents: [
+    LoginComponent,
+    RegisterComponent
   ]
 })
 export class ContentModule { }

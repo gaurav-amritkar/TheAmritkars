@@ -17,25 +17,30 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/material.module';
+import { HttpClientModule } from '@angular/common/http';
+// import * as firebase from 'firebase';
+// firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    FooterComponent,
-    HeaderComponent,
-  ],
   imports: [
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFirestoreModule, // Only required for database features
+    AngularFireAuthModule, // Only required for auth features,
+    AngularFireStorageModule, // Only required for storage features
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     FormsModule,
     BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFirestoreModule, // Only required for database features
-    AngularFireAuthModule, // Only required for auth features,
-    AngularFireStorageModule, // Only required for storage features
+    HttpClientModule
   ],
-  providers: [],
+  declarations: [
+    AppComponent,
+    FooterComponent,
+    HeaderComponent,
+  ],
+  providers: [
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
