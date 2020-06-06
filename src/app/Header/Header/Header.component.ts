@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-Header',
@@ -10,24 +7,8 @@ import { MatSnackBar } from '@angular/material';
 })
 export class HeaderComponent implements OnInit {
 
-  checkUrl = ['/', '/login', '/register'];
-  curUrl: any;
-  constructor(
-    public rout: Router,
-    private angularFireAuth: AngularFireAuth,
-    private snackBar: MatSnackBar
-  ) {
-  }
+  constructor() { }
 
   ngOnInit() {}
 
-  signOut() {
-    this.angularFireAuth.auth.signOut().then(res => {
-      window.location.assign('/login');
-      this.snackBar.open('SignOut Successfull', 'Dismiss', { duration: 3000 });
-      console.log('Sign - out successful...');
-    }).catch(error => {
-      console.log('An error happened...', error);
-    });
-  }
 }

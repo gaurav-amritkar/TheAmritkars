@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import * as firebase from 'firebase/app';
 import * as firebaseui from 'firebaseui';
-
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-Login',
@@ -37,6 +36,7 @@ export class LoginComponent implements OnInit {
           if (isNewUser) {
             window.location.assign('/register');
           } else {
+            // console.log('Existing User');
             window.location.assign('/home');
           }
           // Do something with the returned AuthResult.

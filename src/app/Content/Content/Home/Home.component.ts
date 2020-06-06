@@ -1,9 +1,6 @@
 import { NestedTreeControl } from '@angular/cdk/tree';
 import { Component } from '@angular/core';
 import { MatTreeNestedDataSource } from '@angular/material/tree';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { MatSnackBar } from '@angular/material';
-import { Router } from '@angular/router';
 
 /**
  * Food data with nested structure.
@@ -62,7 +59,6 @@ export class HomeComponent {
         this.u = res.phoneNumber;
       }
     });
-
     this.dataSource.data = TREE_DATA;
   }
 
