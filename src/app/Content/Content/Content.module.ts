@@ -20,4 +20,4 @@ import { ContentRoutingModule } from './Content-routing.module';
     RegisterComponent
   ]
 })
-export class ContentModule { }
+export class ContentModule {}

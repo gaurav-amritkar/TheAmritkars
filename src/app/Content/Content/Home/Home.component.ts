@@ -44,7 +44,21 @@ export class HomeComponent {
   treeControl = new NestedTreeControl<FoodNode>(node => node.children);
   dataSource = new MatTreeNestedDataSource<FoodNode>();
 
-  constructor() {
+  u: any;
+  constructor(
+    private angularFireAuth: AngularFireAuth,
+    private snackBar: MatSnackBar,
+    private router: Router
+  ) {
+
+    this.angularFireAuth.user.subscribe(res => {
+      if (res === null) {
+        window.location.assign('/login');
+        this.snackBar.open('User is not Authenticated', 'Dismiss', { duration: 2000 });
+      } else {
+        this.u = res.phoneNumber;
+      }
+    });
     this.dataSource.data = TREE_DATA;
   }
 
