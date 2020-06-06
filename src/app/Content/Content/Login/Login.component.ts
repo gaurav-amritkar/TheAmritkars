@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import * as firebase from 'firebase/app';
 import * as firebaseui from 'firebaseui';
@@ -15,22 +14,13 @@ export class LoginComponent implements OnInit {
   ui: any;
 
   constructor(
-    // private firestore: AngularFirestore,
     private angularFireAuth: AngularFireAuth,
   ) {
     this.ui = new firebaseui.auth.AuthUI(firebase.auth());
     this.ui.start('#firebaseui-auth-container', this.getUiConfig());
-
-    // this.angularFireAuth.user.subscribe(res => {
-    //   if (res !== null) {
-    //     window.location.assign('/home');
-    //   }
-    // });
-    // localStorage.clear();
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   getUiConfig() {
     return {
@@ -45,12 +35,10 @@ export class LoginComponent implements OnInit {
           const operationType = authResult.operationType;
 
           if (isNewUser) {
-            // console.log('New User');
             window.location.assign('/register');
           } else {
             window.location.assign('/home');
           }
-
           // Do something with the returned AuthResult.
           // Return type determines whether we continue the redirect automatically
           // or whether we leave that to developer to handle.

@@ -18,8 +18,6 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { MaterialModule } from 'src/material.module';
 import { HttpClientModule } from '@angular/common/http';
-// import * as firebase from 'firebase';
-// firebase.initializeApp(environment.firebaseConfig);
 
 @NgModule({
   imports: [

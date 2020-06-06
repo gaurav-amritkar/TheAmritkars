@@ -27,8 +27,7 @@ export class RegisterComponent implements OnInit {
       });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   AddUser() {
     console.log('In add User func');

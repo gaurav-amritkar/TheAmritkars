@@ -19,8 +19,7 @@ export class HeaderComponent implements OnInit {
   ) {
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   signOut() {
     this.angularFireAuth.auth.signOut().then(res => {
