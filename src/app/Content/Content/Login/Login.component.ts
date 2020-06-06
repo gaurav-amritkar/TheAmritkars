@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-// import { AngularFirestore } from '@angular/fire/firestore';
+import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
-import * as firebase from 'firebase/app';
 import * as firebaseui from 'firebaseui';
-
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-Login',
@@ -15,21 +14,14 @@ export class LoginComponent implements OnInit {
   ui: any;
 
   constructor(
-    // private firestore: AngularFirestore,
+    private firestore: AngularFirestore,
     private angularFireAuth: AngularFireAuth,
   ) {
-    this.ui = new firebaseui.auth.AuthUI(firebase.auth());
-    this.ui.start('#firebaseui-auth-container', this.getUiConfig());
-
-    // this.angularFireAuth.user.subscribe(res => {
-    //   if (res !== null) {
-    //     window.location.assign('/home');
-    //   }
-    // });
-    // localStorage.clear();
   }
 
   ngOnInit() {
+    this.ui = new firebaseui.auth.AuthUI(firebase.auth());
+    this.ui.start('#firebaseui-auth-container', this.getUiConfig());
   }
 
   getUiConfig() {
@@ -48,6 +40,7 @@ export class LoginComponent implements OnInit {
             // console.log('New User');
             window.location.assign('/register');
           } else {
+            // console.log('Existing User');
             window.location.assign('/home');
           }
 
